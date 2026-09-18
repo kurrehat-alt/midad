@@ -16,9 +16,10 @@
 
   // 1. Initialize Supabase Client
   function initSupabase() {
-    if (window.supabase && typeof window.supabase.createClient === "function") {
+    const sb = window.supabase || (typeof supabase !== "undefined" ? supabase : null);
+    if (sb && typeof sb.createClient === "function") {
       try {
-        supabaseClient = window.supabase.createClient(SUPABASE_CONFIG.url, SUPABASE_CONFIG.key, {
+        supabaseClient = sb.createClient(SUPABASE_CONFIG.url, SUPABASE_CONFIG.key, {
           auth: {
             persistSession: true,
             autoRefreshToken: true
