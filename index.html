@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#133932">
+  <meta name="description" content="Midad Akademi — Çocuklar, gençler ve yetişkinler için Google Meet ve Zoom üzerinden canlı birebir Kur'an-ı Kerim, Tecvid, Arapça ve İslami Değerler eğitimi.">
+  <title>MİDAD AKADEMİ | Canlı Kur'an, Arapça & Değerler Eğitimi</title>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Accessibility Skip Link -->
+  <a class="skip-link" href="#main-content">İçeriğe Geç / Skip to Content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <!-- Brand Logo -->
+      <a class="brand" href="#top" aria-label="Midad Academy Home">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48">
+            <path d="M11 31.5V14.7c4.8-1.8 9.2-1.1 13 2.1 3.8-3.2 8.2-3.9 13-2.1v16.8c-4.8-1.7-9.2-1-13 2.2-3.8-3.2-8.2-3.9-13-2.2Z"/>
+            <path d="M24 17v16.4"/>
+            <path d="m35.8 8.4.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z" fill="#f3d49b"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title" data-i18n="brand_name">MİDAD AKADEMİ</span>
+          <span class="brand-subtitle" data-i18n="brand_tagline">Canlı Kur'an, Arapça & Değerler Eğitimi</span>
+        </div>
+      </a>
+
+            <!-- Desktop Nav -->
+      <nav class="main-nav" aria-label="Ana Menü">
+        <a href="#calendar-section" data-i18n="nav_calendar">Ders Randevusu</a>
+        <a href="#courses-section" data-i18n="nav_courses">Eğitimlerimiz</a>
+        <a href="#platforms-section" data-i18n="nav_platforms">Meet & Zoom</a>
+        <a href="#method-section" data-i18n="nav_method">Nasıl İşler?</a>
+        <a href="#faq-section" data-i18n="nav_faq">S.S.S.</a>
+        <a class="btn-nav" href="#trial-section">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span data-i18n="nav_trial">Ücretsiz Deneme Dersi</span>
+        </a>
+      </nav>
+
+            <!-- Header Actions: Language Switcher + Portal Triggers + Mobile Toggle -->
+      <div class="header-actions">
+        <!-- Portal Trigger Dropdown/Buttons -->
+        <div class="user-portal-controls" id="user-portal-controls">
+          <div class="logged-out-btns" id="portal-logged-out" style="display:flex; gap:8px;">
+            <button type="button" class="portal-trigger-btn" id="btn-open-student-modal" aria-label="Student Login">
+              <svg viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span data-i18n="nav_student_login">Öğrenci Girişi</span>
+            </button>
+            <button type="button" class="portal-trigger-btn" id="btn-open-admin-modal" aria-label="Admin Login">
+              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span data-i18n="nav_admin_login">Yönetici Girişi</span>
+            </button>
+          </div>
+          <div class="logged-in-badge" id="portal-logged-in" style="display:none; align-items:center; gap:8px;">
+            <button type="button" class="user-badge-nav" id="btn-open-user-dash">
+              <span class="user-avatar-dot" id="nav-user-avatar">YD</span>
+              <span id="nav-user-name">Yusuf Demir</span>
+            </button>
+            <button type="button" class="btn-logout" id="btn-nav-logout" data-i18n="nav_logout">Çıkış Yap</button>
+          </div>
+        </div>
+
+        <!-- Language Switcher -->
+        <div class="lang-selector">
+          <button class="lang-btn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Select Language">
+            <span class="flag-icon" id="current-lang-flag">🇹🇷</span>
+            <span id="current-lang-name">Türkçe</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button type="button" class="lang-option selected" data-lang="tr"><span>🇹🇷</span> Türkçe</button>
+            <button type="button" class="lang-option" data-lang="en"><span>🇬🇧</span> English</button>
+            <button type="button" class="lang-option" data-lang="fr"><span>🇫🇷</span> Français</button>
+            <button type="button" class="lang-option" data-lang="de"><span>🇩🇪</span> Deutsch</button>
+            <button type="button" class="lang-option" data-lang="it"><span>🇮🇹</span> Italiano</button>
+            <button type="button" class="lang-option" data-lang="ru"><span>🇷🇺</span> Русский</button>
+            <button type="button" class="lang-option" data-lang="ar"><span>🇸🇦</span> العربية</button>
+          </div>
+        </div>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-toggle" id="mobile-toggle" type="button" aria-label="Menüyü Aç" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+        <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <a href="#calendar-section" data-i18n="nav_calendar">Ders Randevusu</a>
+      <a href="#courses-section" data-i18n="nav_courses">Eğitimlerimiz</a>
+      <a href="#platforms-section" data-i18n="nav_platforms">Meet & Zoom</a>
+      <a href="#method-section" data-i18n="nav_method">Nasıl İşler?</a>
+      <a href="#faq-section" data-i18n="nav_faq">S.S.S.</a>
+      <div style="display:flex; gap:10px; margin:10px 0;">
+        <button type="button" class="portal-trigger-btn" id="m-btn-student-login" style="flex:1; justify-content:center;">
+          <span data-i18n="nav_student_login">Öğrenci Girişi</span>
+        </button>
+        <button type="button" class="portal-trigger-btn" id="m-btn-admin-login" style="flex:1; justify-content:center;">
+          <span data-i18n="nav_admin_login">Yönetici Girişi</span>
+        </button>
+      </div>
+      <a class="btn-nav" href="#trial-section" data-i18n="nav_trial">Ücretsiz Deneme Dersi</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero" id="top">
+      <div class="container">
+        <!-- Hero Copy Left -->
+        <div class="hero-content">
+          <div class="eyebrow-badge">
+            <span class="live-pulse"></span>
+            <span data-i18n="hero_badge">Google Meet & Zoom Üzerinden Canlı Birebir & Butik Eğitim</span>
+          </div>
+
+          <h1>
+            <span data-i18n="hero_title_1">Kur'an-ı Kerim ve Arapça'yı</span><br>
+            <em data-i18n="hero_title_em">evinizin konforunda öğrenin.</em>
+          </h1>
+
+          <p class="hero-lead" data-i18n="hero_lead">
+            Çocuklar, gençler ve yetişkinler için özel olarak tasarlanmış interaktif canlı dersler. Uzman eğitmenlerle doğru Tecvid, akıcı Arapça ve kalıcı İslami değerler eğitimi.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn-primary" href="#trial-section">
+              <span data-i18n="hero_cta_primary">Ücretsiz Deneme Dersi Alın</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a class="btn-secondary" href="#courses-section" data-i18n="hero_cta_secondary">
+              Eğitim Programları
+            </a>
+          </div>
+
+          <div class="trust-badges">
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+              <span data-i18n="hero_trust_1">Canlı & İnteraktif</span>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+              <span data-i18n="hero_trust_2">Google Meet & Zoom Desteği</span>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+              <span data-i18n="hero_trust_3">İcazetli ve Deneyimli Eğitmenler</span>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+              <span data-i18n="hero_trust_4">Kişiye Özel Esnek Saatler</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Right (Midad Signature Rotating Lesson Card) -->
+        <div class="hero-visual-wrap">
+          <div class="visual-bg-circle"></div>
+          <div class="glow-orb one"></div>
+          <div class="glow-orb two"></div>
+
+          <div class="orbit-tag one" id="weekly-kw1">Açıklık</div>
+          <div class="orbit-tag two" id="weekly-kw2">Güven</div>
+
+          <!-- Weekly Lesson Card -->
+          <div class="weekly-card">
+            <div class="weekly-header">
+              <span class="badge-live" data-i18n="card_live_topic">Bu Haftanın Değeri</span>
+              <span class="weekly-range" id="weekly-range">1 – 7 Mart</span>
+            </div>
+
+            <div class="weekly-icon-wrap">
+              <svg viewBox="0 0 80 80">
+                <path d="M15 53V25c9-3.1 17.3-1.8 25 4.1 7.7-5.9 16-7.2 25-4.1v28c-9-3-17.3-1.7-25 4.2C32.3 51.3 24 50 15 53Z"/>
+                <path d="M40 29v28"/>
+              </svg>
+            </div>
+
+            <span class="weekly-tag" id="weekly-value">Doğruluk (Sıdk)</span>
+            <h2 class="weekly-title" id="weekly-title">Kimse görmediğinde bile doğru olanı yaparım.</h2>
+
+            <div class="weekly-steps" data-i18n="card_steps">
+              Kıssa • Sohbet • Uygulama
+            </div>
+
+            <div class="weekly-refresh" data-i18n="card_auto_refresh">
+              ↻ Her pazartesi yeni bir ahlaki değer
+            </div>
+          </div>
+
+          <!-- Parent Assurance Note -->
+          <div class="parent-note-card">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div>
+              <strong data-i18n="card_parent_note_title">Somut Netice</strong>
+              <span data-i18n="card_parent_note_desc">Evde ve okulda hissedilen güzel ahlak ve bilinç</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote Strip beneath Hero -->
+      <div class="hero-quote-strip">
+        <div class="container">
+          <span data-i18n="card_foot_quote_from">Çocuğun «Neden yapmalıyım?» sorusundan,</span>
+          <svg viewBox="0 0 80 16"><path d="M2 8h70M65 2l8 6-8 6"/></svg>
+          <strong data-i18n="card_foot_quote_to">«Bu benim ahlakımdır» şuuruna...</strong>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Interactive Calendar & Lesson Booking System -->
+    <section class="calendar-section" id="calendar-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow" data-i18n="cal_badge">Canlı Ders Takvimi</span>
+          <h2 data-i18n="cal_title">Takvimden Müsait Saatinizi Seçin</h2>
+          <p data-i18n="cal_desc">Uygun tarihi ve saati seçin, eğitmeninizi belirleyin ve Google Meet veya Zoom sınıf bağlantınızı hemen alın.</p>
+        </div>
+
+        <div class="calendar-system-grid">
+          <!-- Column 1: Monthly Calendar -->
+          <div class="cal-card">
+            <div class="cal-nav-bar">
+              <span class="cal-month-title" id="cal-month-display">Mart 2026</span>
+              <div class="cal-nav-btns">
+                <button type="button" class="cal-nav-btn" id="cal-prev-month" aria-label="Previous Month">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button type="button" class="cal-nav-btn" id="cal-next-month" aria-label="Next Month">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="cal-weekdays" id="cal-weekdays-row">
+              <span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cmt</span><span>Paz</span>
+            </div>
+
+            <div class="cal-days-grid" id="cal-days-grid">
+              <!-- Dynamically populated by script.js -->
+            </div>
+          </div>
+
+          <!-- Column 2: Time Slots for Selected Day -->
+          <div class="slots-card">
+            <div class="slots-header">
+              <h4 data-i18n="cal_select_slot">2. Müsait Saati Seçiniz</h4>
+              <span class="selected-date-badge" id="cal-selected-date-label">Tarih Seçiniz</span>
+            </div>
+
+            <div class="slots-list-grid" id="cal-slots-container">
+              <!-- Dynamically populated by script.js -->
+            </div>
+
+            <div class="slots-legend">
+              <div class="legend-item"><span class="legend-dot available"></span><span data-i18n="cal_slot_available">Müsait</span></div>
+              <div class="legend-item"><span class="legend-dot selected"></span><span data-i18n="cal_slot_selected">Seçildi</span></div>
+              <div class="legend-item"><span class="legend-dot booked"></span><span data-i18n="cal_slot_booked">Dolu</span></div>
+            </div>
+          </div>
+
+          <!-- Column 3: Booking Form & Instant Meeting Confirmation -->
+          <div class="booking-form-card">
+            <h4 data-i18n="cal_booking_details">3. Randevu Bilgileri</h4>
+            
+            <div class="booking-summary-pill" id="booking-summary-pill">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span id="booking-summary-text">Lütfen tarih ve saat seçiniz</span>
+            </div>
+
+            <form id="calendar-booking-form" novalidate>
+              <div class="cal-form-group">
+                <label for="cal-student-name" data-i18n="label_student">Öğrencinin Adı</label>
+                <input type="text" id="cal-student-name" required placeholder="Örn: Yusuf Demir" data-i18n-placeholder="placeholder_student">
+              </div>
+
+              <div class="cal-form-group">
+                <label for="cal-student-email" data-i18n="student_email">E-Posta Adresi</label>
+                <input type="email" id="cal-student-email" required placeholder="ornek@email.com">
+              </div>
+
+              <div class="cal-form-group">
+                <label for="cal-course-select" data-i18n="label_course">Almak İstediğiniz Eğitim</label>
+                <select id="cal-course-select" required>
+                  <option value="c2" selected data-i18n="opt_c2">Tecvidli Kur'an-ı Kerim Tilaveti</option>
+                  <option value="c1" data-i18n="opt_c1">Elif-Bâ & Sıfırdan Kur'an Okuma</option>
+                  <option value="c3" data-i18n="opt_c3">Hafızlık ve Sure Ezberi</option>
+                  <option value="c4" data-i18n="opt_c4">Çocuklar İçin Arapça (Temel Konuşma)</option>
+                  <option value="c5" data-i18n="opt_c5">Klasik ve Kur'an Arapçası (Fusha)</option>
+                  <option value="c6" data-i18n="opt_c6">Ahlak & İslami Değerler Eğitimi</option>
+                </select>
+              </div>
+
+              <div class="cal-form-group">
+                <label for="cal-teacher-select" data-i18n="cal_teacher">Eğitmen Tercihi</label>
+                <select id="cal-teacher-select">
+                  <option value="any" selected data-i18n="cal_teacher_any">Fark etmez (En Erken Müsait Eğitmen)</option>
+                  <option value="teacher_1" data-i18n="cal_teacher_1">Şeyh Mahmud el-Ezheri (Ezher İcazetli)</option>
+                  <option value="teacher_2" data-i18n="cal_teacher_2">Fatma Zehra Hoca (Kıraat & Çocuk Uzmanı)</option>
+                  <option value="teacher_3" data-i18n="cal_teacher_3">Ömer Faruk Hoca (Fusha & Klasik Arapça)</option>
+                </select>
+              </div>
+
+              <div class="cal-form-group">
+                <label data-i18n="label_platform">Sınıf Platformu</label>
+                <div class="platform-picker-grid">
+                  <label class="platform-picker-item">
+                    <input type="radio" name="cal-platform" value="meet" checked>
+                    <span class="platform-picker-box">
+                      <svg viewBox="0 0 24 24" fill="#00ac47"><circle cx="12" cy="12" r="10"/></svg>
+                      <span>Google Meet</span>
+                    </span>
+                  </label>
+                  <label class="platform-picker-item">
+                    <input type="radio" name="cal-platform" value="zoom">
+                    <span class="platform-picker-box">
+                      <svg viewBox="0 0 24 24" fill="#2d8cff"><circle cx="12" cy="12" r="10"/></svg>
+                      <span>Zoom</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-book-slot" id="btn-submit-calendar-booking">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span data-i18n="cal_btn_book">Randevuyu Onayla ve Oluştur</span>
+              </button>
+
+              <div class="cal-status-box" id="cal-status-box"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Google Meet & Zoom Platforms Section -->
+    <section class="platforms-section" id="platforms-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow" data-i18n="platforms_badge">Modern Sanal Sınıflar</span>
+          <h2 data-i18n="platforms_title">Google Meet ve Zoom ile Kesintisiz Canlı Eğitim</h2>
+          <p data-i18n="platforms_desc">Kurulum zorluğu yok. Bilgisayar, tablet veya akıllı telefonunuzdan tek tıkla yüksek kaliteli canlı derse katılın.</p>
+        </div>
+
+        <!-- Two Platform Cards -->
+        <div class="platform-cards-grid">
+          <!-- Google Meet Card -->
+          <div class="platform-card meet">
+            <div class="platform-logo-box">
+              <svg viewBox="0 0 48 48">
+                <rect width="26" height="26" x="6" y="11" rx="4" fill="#00832d"/>
+                <path d="m32 20 10-6v20l-10-6z" fill="#0066da"/>
+                <path d="m32 20-5 4v-8l5 4z" fill="#e53935"/>
+                <circle cx="19" cy="24" r="6" fill="#fff" opacity=".3"/>
+              </svg>
+            </div>
+            <div class="platform-content">
+              <h3 data-i18n="meet_title">Google Meet</h3>
+              <p data-i18n="meet_desc">Program yüklemeden doğrudan tarayıcı veya takvim davetiyenizden bağlanın. Hafif, hızlı ve mobil cihazlarda kesintisiz.</p>
+              <span class="platform-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+                iOS, Android, Mac & PC
+              </span>
+            </div>
+          </div>
+
+          <!-- Zoom Education Card -->
+          <div class="platform-card zoom">
+            <div class="platform-logo-box">
+              <svg viewBox="0 0 48 48">
+                <rect width="36" height="36" x="6" y="6" rx="10" fill="#2d8cff"/>
+                <path d="M14 18a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H17a3 3 0 0 1-3-3V18z" fill="#fff"/>
+                <path d="m30 21 6-4v14l-6-4v-6z" fill="#fff"/>
+              </svg>
+            </div>
+            <div class="platform-content">
+              <h3 data-i18n="zoom_title">Zoom Education</h3>
+              <p data-i18n="zoom_desc">Tecvid telaffuzları için kristal netliğinde ses kalitesi, etkileşimli mushaf paylaşımı ve dijital beyaz tahta imkânı.</p>
+              <span class="platform-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+                HD Audio & Whiteboard
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Platform Benefit Features -->
+        <div class="platform-features-grid">
+          <div class="plat-feature-item">
+            <div class="plat-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4 data-i18n="plat_f1_title">Birebir (1'e 1) veya Minik Gruplar</h4>
+            <p data-i18n="plat_f1_desc">Öğrencinin seviyesine göre tamamen kişiselleştirilmiş ilgi ve anında telaffuz düzeltmesi.</p>
+          </div>
+
+          <div class="plat-feature-item">
+            <div class="plat-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h4 data-i18n="plat_f2_title">Esnek Saatler & Tüm Zaman Dilimleri</h4>
+            <p data-i18n="plat_f2_desc">Avrupa, Amerika, Türkiye ve tüm dünya saat dilimlerine uygun hafta içi ve hafta sonu ders saatleri.</p>
+          </div>
+
+          <div class="plat-feature-item">
+            <div class="plat-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4 data-i18n="plat_f3_title">Kadın ve Erkek Yetkin Eğitmenler</h4>
+            <p data-i18n="plat_f3_desc">Ezher mezunu, hafız ve pedagojik formasyona sahip alanında uzman kadın ve erkek hocalar.</p>
+          </div>
+
+          <div class="plat-feature-item">
+            <div class="plat-icon">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h4 data-i18n="plat_f4_title">Aylık Veli İlerleme Raporu</h4>
+            <p data-i18n="plat_f4_desc">Her dersten sonra işlenen konu, ödev ve gelişim raporu doğrudan veliye WhatsApp ile iletilir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses & Programs Section -->
+    <section class="courses-section" id="courses-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow" data-i18n="courses_badge">Zengin Müfredat</span>
+          <h2 data-i18n="courses_title">Her Yaşa ve Seviyeye Uygun Eğitim Programları</h2>
+          <p data-i18n="courses_desc">Sıfırdan başlayanlardan hafızlık yapmak isteyenlere kadar modüler ve sürdürülebilir eğitim yolları.</p>
+        </div>
+
+        <div class="courses-grid">
+          <!-- Course 1: Noorani Qaidah -->
+          <article class="course-card">
+            <div class="course-card-top">
+              <div class="course-icon-badge">
+                <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </div>
+              <span class="course-tag" data-i18n="c1_tag">5+ Yaş Çocuklar & Yetişkinler</span>
+            </div>
+            <h3 data-i18n="c1_title">Elif-Bâ & Sıfırdan Kur'an Okuma</h3>
+            <p data-i18n="c1_desc">Harflerin doğru mahreçleri, sesli harekeler, harf birleştirme kuralları ile kısa sürede Kur'an-ı Kerim'e geçiş.</p>
+            <ul class="course-features-list">
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c1_f1">Görsel ve sesli interaktif Elif-Bâ</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c1_f2">Kelimeleri heceleyerek akıcı okuma</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c1_f3">Sabırlı ve sevgi dolu öğretim yaklaşımı</span></li>
+            </ul>
+            <a href="#trial-section" class="btn-course-enroll" data-course="c1" data-i18n="nav_trial">Ücretsiz Deneme Dersi</a>
+          </article>
+
+          <!-- Course 2: Tajweed -->
+          <article class="course-card">
+            <div class="course-card-top">
+              <div class="course-icon-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <span class="course-tag" data-i18n="c2_tag">Tüm Seviyeler</span>
+            </div>
+            <h3 data-i18n="c2_title">Tecvidli Kur'an-ı Kerim Okuma</h3>
+            <p data-i18n="c2_desc">Med kuralları, İhfa, İzhar, İdgam, Kalkale ve vakıf işaretleri ile Kur'an'ı usulüne ve makamına uygun tilavet.</p>
+            <ul class="course-features-list">
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c2_f1">Canlı ses analizi ve mahreç düzeltme</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c2_f2">Kısa sureler ve namaz duaları ezberi</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c2_f3">Mushaf üzerinden kelime kelime takip</span></li>
+            </ul>
+            <a href="#trial-section" class="btn-course-enroll" data-course="c2" data-i18n="nav_trial">Ücretsiz Deneme Dersi</a>
+          </article>
+
+          <!-- Course 3: Hifz -->
+          <article class="course-card">
+            <div class="course-card-top">
+              <div class="course-icon-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              </div>
+              <span class="course-tag" data-i18n="c3_tag">Hafızlık Adayları & Çocuklar</span>
+            </div>
+            <h3 data-i18n="c3_title">Hafızlık ve Sure Ezber Programı</h3>
+            <p data-i18n="c3_desc">Kişiye özel ezber programı, günlük ders (sebik), dünkü ders (sebki) ve genel tekrar (menzil) takibi.</p>
+            <ul class="course-features-list">
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c3_f1">Unutmayı önleyen sistematik tekrar</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c3_f2">Hafızlık icazetine hazırlık</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c3_f3">Günlük takip çizelgesi ve motivasyon</span></li>
+            </ul>
+            <a href="#trial-section" class="btn-course-enroll" data-course="c3" data-i18n="nav_trial">Ücretsiz Deneme Dersi</a>
+          </article>
+
+          <!-- Course 4: Arabic for Kids -->
+          <article class="course-card">
+            <div class="course-card-top">
+              <div class="course-icon-badge">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <span class="course-tag" data-i18n="c4_tag">6 - 15 Yaş & Yeni Başlayanlar</span>
+            </div>
+            <h3 data-i18n="c4_title">Çocuklar ve Başlangıç İçin Arapça</h3>
+            <p data-i18n="c4_desc">Resimli kartlar, hikayeler, animasyonlar ve oyunlarla çocukların severek öğreneceği temel Arapça iletişimi.</p>
+            <ul class="course-features-list">
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c4_f1">Günlük selamlaşma ve tanışma kalıpları</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c4_f2">Renkler, sayılar, aile ve eşyalar</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c4_f3">Özgüvenle konuşma pratiği</span></li>
+            </ul>
+            <a href="#trial-section" class="btn-course-enroll" data-course="c4" data-i18n="nav_trial">Ücretsiz Deneme Dersi</a>
+          </article>
+
+          <!-- Course 5: Classical & Quranic Arabic -->
+          <article class="course-card">
+            <div class="course-card-top">
+              <div class="course-icon-badge">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              </div>
+              <span class="course-tag" data-i18n="c5_tag">Orta ve İleri Düzey</span>
+            </div>
+            <h3 data-i18n="c5_title">Klasik ve Kur'an Arapçası (Fusha)</h3>
+            <p data-i18n="c5_desc">Nahiv ve Sarf dilbilgisi kuralları ile ayetleri ve hadisleri meale ihtiyaç duymadan aslından anlama yetisi.</p>
+            <ul class="course-features-list">
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c5_f1">Temel gramer ve cümle tahlilleri</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c5_f2">Kur'an'da en çok geçen 500 kelime</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c5_f3">Tefsir ve metin okuma çalışmaları</span></li>
+            </ul>
+            <a href="#trial-section" class="btn-course-enroll" data-course="c5" data-i18n="nav_trial">Ücretsiz Deneme Dersi</a>
+          </article>
+
+          <!-- Course 6: Islamic Values -->
+          <article class="course-card">
+            <div class="course-card-top">
+              <div class="course-icon-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <span class="course-tag" data-i18n="c6_tag">Çocuklar ve Gençler</span>
+            </div>
+            <h3 data-i18n="c6_title">Gençler İçin Ahlak ve İslami Değerler</h3>
+            <p data-i18n="c6_desc">Sadece teorik bilgi değil; dürüstlük, namaz bilinci, merhamet, anne-babaya saygı ve özgüven kazandıran sohbetler.</p>
+            <ul class="course-features-list">
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c6_f1">Haftalık pratik hayat ödevi</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c6_f2">Yargılanmadan soru sorma ortamı</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> <span data-i18n="c6_f3">Batı'da ve modern dünyada kimlik inşası</span></li>
+            </ul>
+            <a href="#trial-section" class="btn-course-enroll" data-course="c6" data-i18n="nav_trial">Ücretsiz Deneme Dersi</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Methodology Section (Midad Dialogic Approach) -->
+    <section class="method-section" id="method-section">
+      <div class="container">
+        <div class="method-head">
+          <span class="section-eyebrow" data-i18n="method_badge">Pedagojik Yaklaşımımız</span>
+          <h2 data-i18n="method_title">Sıkıcı Dersler Değil, Kalbe ve Akla Hitap Eden Sohbet</h2>
+          <p data-i18n="method_desc">Her derste tek bir konu ya da kuralı ele alır, öğrencinin dünyasına (okul, arkadaşlık, günlük hayat) bağlarız.</p>
+        </div>
+
+        <div class="method-grid">
+          <!-- Card 1 -->
+          <article class="method-card dark">
+            <span class="method-num" data-i18n="m_card1_num">01</span>
+            <div class="method-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            </div>
+            <h3 data-i18n="m_card1_title">Bu Dersler Kimler İçin?</h3>
+            <p data-i18n="m_card1_desc">Avrupa, Türkiye ve dünyanın dört bir yanında yaşayan 5-16 yaş arası çocuklar, gençler ve Kur'an öğrenmek isteyen yetişkinler için.</p>
+          </article>
+
+          <!-- Card 2 (Highlight Center) -->
+          <article class="method-card highlight">
+            <span class="method-num" data-i18n="m_card2_num">02</span>
+            <div class="method-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <h3 data-i18n="m_card2_title">Bir Ders Nasıl Geçer?</h3>
+            <ol class="lesson-steps-list">
+              <li>
+                <span class="step-badge">1</span>
+                <div>
+                  <strong data-i18n="m_card2_step1">Sıcak Giriş & Samimi Sohbet</strong>
+                  <small data-i18n="m_card2_step1_sub">Öğrenciyi derse hazırlayan güler yüzlü karşılama</small>
+                </div>
+              </li>
+              <li>
+                <span class="step-badge">2</span>
+                <div>
+                  <strong data-i18n="m_card2_step2">Canlı Uygulama & Mahreç Düzeltme</strong>
+                  <small data-i18n="m_card2_step2_sub">Ekranda Mushaf üzerinden birebir okuma ve tekrar</small>
+                </div>
+              </li>
+              <li>
+                <span class="step-badge">3</span>
+                <div>
+                  <strong data-i18n="m_card2_step3">Haftalık Hayat Uygulaması</strong>
+                  <small data-i18n="m_card2_step3_sub">Öğrenilen ayet veya ahlaki değerin hayata geçirilmesi</small>
+                </div>
+              </li>
+            </ol>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="method-card dark">
+            <span class="method-num" data-i18n="m_card3_num">03</span>
+            <div class="method-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 data-i18n="m_card3_title">Öğrencimize Ne Kazandırıyoruz?</h3>
+            <ul class="outcome-list">
+              <li>
+                <strong data-i18n="m_card3_b1_title">Sağlam Temel:</strong>
+                <span data-i18n="m_card3_b1_desc">Korkutmadan, sevdirerek doğru Tecvid ve Kur'an muhabbeti.</span>
+              </li>
+              <li>
+                <strong data-i18n="m_card3_b2_title">Ahlaki Pusula:</strong>
+                <span data-i18n="m_card3_b2_desc">Sosyal çevresinde inancını ve kimliğini özgüvenle yaşama.</span>
+              </li>
+              <li>
+                <strong data-i18n="m_card3_b3_title">Akıcı Telaffuz:</strong>
+                <span data-i18n="m_card3_b3_desc">Arapça harfleri yerinden ve düzgün çıkarma yetisi.</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Step How It Works Section -->
+    <section class="how-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow" data-i18n="how_badge">4 Kolay Adım</span>
+          <h2 data-i18n="how_title">Eğitime Nasıl Başlayabilirsiniz?</h2>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3 data-i18n="step1_title">Formu Doldurun</h3>
+            <p data-i18n="step1_desc">Çocuğunuzun veya kendinizin bilgilerini ve tercih ettiğiniz platformu (Meet/Zoom) seçin.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3 data-i18n="step2_title">WhatsApp ile İletişim</h3>
+            <p data-i18n="step2_desc">Danışmanımız sizinle iletişime geçerek size en uygun gün ve saati belirlesin.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3 data-i18n="step3_title">Ücretsiz Deneme Dersi</h3>
+            <p data-i18n="step3_desc">Hocamızla 30 dakikalık tanışma ve seviye tespit dersine Meet veya Zoom üzerinden katılın.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <h3 data-i18n="step4_title">Düzenli Derslere Başlayın</h3>
+            <p data-i18n="step4_desc">Memnun kalırsanız size özel haftalık ders programınızı başlatıp gelişimi takip edin.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow" data-i18n="reviews_badge">Veli Yorumları</span>
+          <h2 data-i18n="reviews_title">Dünyanın Dört Bir Yanından Ailelerimizin Deneyimleri</h2>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p data-i18n="rev1_text">"Almanya'da yaşıyoruz. 8 yaşındaki oğlum için Türkçe ve Arapça destekli Kur'an hocası arıyorduk. Zoom üzerinden derslere başladık; hocamızın sabrı ve sevgisi sayesinde oğlum 2 ayda Kur'an'a geçti!"</p>
+            <div class="review-author">
+              <div class="author-avatar">ZK</div>
+              <div class="author-info">
+                <strong data-i18n="rev1_author">Zeynep K.</strong>
+                <small data-i18n="rev1_loc">Frankfurt, Almanya</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p data-i18n="rev2_text">"Google Meet üzerinden haftada 2 gün Tecvid dersi alıyorum. Saat farkına rağmen bana uygun vakit ayarlandı. Harflerin mahreçlerini ilk defa bu kadar net kavradım. Kesinlikle tavsiye ederim."</p>
+            <div class="review-author">
+              <div class="author-avatar">AY</div>
+              <div class="author-info">
+                <strong data-i18n="rev2_author">Ahmet Y.</strong>
+                <small data-i18n="rev2_loc">Londra, İngiltere</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p data-i18n="rev3_text">"Kızımın hem Arapça temelini hem de namaz ve ahlak bilincini pekiştirdiler. Ezberci değil, sevdirerek öğreten harika bir kadro. Aylık raporlar da çok faydalı."</p>
+            <div class="review-author">
+              <div class="author-avatar">FS</div>
+              <div class="author-info">
+                <strong data-i18n="rev3_author">Fatma S.</strong>
+                <small data-i18n="rev3_loc">İstanbul, Türkiye</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conversion Section: FAQ Accordion & Live Trial Booking Form -->
+    <section class="conversion-section" id="trial-section">
+      <div class="container">
+        <!-- FAQ Accordion Left -->
+        <div class="faq-wrap" id="faq-section">
+          <span class="section-eyebrow" data-i18n="faq_badge">Merak Edilenler</span>
+          <h2 data-i18n="faq_title">Sıkça Sorulan Sorular</h2>
+
+          <div class="faq-list">
+            <details open>
+              <summary>
+                <span data-i18n="faq_q1">Deneme dersi gerçekten ücretsiz mi?</span>
+                <span class="faq-toggle">+</span>
+              </summary>
+              <p data-i18n="faq_a1">Evet, 30 dakikalık deneme ve seviye tespit dersimiz tamamen ücretsizdir. Hiçbir kredi kartı veya taahhüt gerekmez. Hocamızı ve yöntemi beğenirseniz devam edersiniz.</p>
+            </details>
+
+            <details>
+              <summary>
+                <span data-i18n="faq_q2">Dersler Google Meet üzerinden mi yoksa Zoom üzerinden mi yapılıyor?</span>
+                <span class="faq-toggle">+</span>
+              </summary>
+              <p data-i18n="faq_a2">Tercih tamamen sizindir! Kayıt formunda Google Meet veya Zoom seçeneklerinden dilediğinizi seçebilirsiniz. Ders linki her dersten önce takviminize ve WhatsApp'ınıza iletilir.</p>
+            </details>
+
+            <details>
+              <summary>
+                <span data-i18n="faq_q3">Çocuğum hiç Arapça bilmiyor, dersi takip edebilir mi?</span>
+                <span class="faq-toggle">+</span>
+              </summary>
+              <p data-i18n="faq_a3">Kesinlikle evet. Eğitmenlerimiz sıfırdan başlayanlar için pedagojik olarak özel hazırlanmış görsel metotlar kullanır. Türkçe, İngilizce veya seçtiğiniz dilde yardımcı açıklamalarla çocuğunuz hiç zorlanmaz.</p>
+            </details>
+
+            <details>
+              <summary>
+                <span data-i18n="faq_q4">Ders gün ve saatlerini kendimiz seçebilir miyiz?</span>
+                <span class="faq-toggle">+</span>
+              </summary>
+              <p data-i18n="faq_a4">Evet. Avrupa, İngiltere, Amerika ve Türkiye saat dilimlerine göre sabah, öğleden sonra veya akşam saatlerinde ders seçeneklerimiz mevcuttur.</p>
+            </details>
+
+            <details>
+              <summary>
+                <span data-i18n="faq_q5">Eğitmen kadronuz kimlerden oluşuyor?</span>
+                <span class="faq-toggle">+</span>
+              </summary>
+              <p data-i18n="faq_a5">Eğitmenlerimiz ilahiyat ve Arap dili mezunu, Kur'an-ı Kerim kıraat ve tecvid icazetine sahip, çocuk psikolojisi ve online öğretim tecrübesi olan seçkin hocalardan oluşur. Kadın veya erkek hoca tercihi yapabilirsiniz.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Booking Form Right -->
+        <div class="form-card-wrap">
+          <div class="form-header">
+            <span class="badge-live" data-i18n="form_badge">Kontenjanlar Açık</span>
+            <h2 data-i18n="form_title">Ücretsiz Deneme Dersi Randevusu Alın</h2>
+            <p data-i18n="form_desc">Formu doldurun; tercih ettiğiniz platform (Meet/Zoom) ve saat için randevunuzu WhatsApp üzerinden anında oluşturalım.</p>
+          </div>
+
+          <form id="trial-form" novalidate>
+            <!-- Parent & Student Names -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="field-parent-name" data-i18n="label_parent">Veli / Yetişkin Öğrenci Adı Soyadı</label>
+                <input type="text" id="field-parent-name" required minlength="2" placeholder="Örn: Mehmet Demir" data-i18n-placeholder="placeholder_parent">
+                <span class="field-error-msg" data-i18n="form_err_req">Lütfen bu alanı doldurunuz.</span>
+              </div>
+              <div class="form-group">
+                <label for="field-student-name" data-i18n="label_student">Öğrencinin Adı</label>
+                <input type="text" id="field-student-name" required minlength="2" placeholder="Örn: Yusuf Demir" data-i18n-placeholder="placeholder_student">
+                <span class="field-error-msg" data-i18n="form_err_req">Lütfen bu alanı doldurunuz.</span>
+              </div>
+            </div>
+
+            <!-- Age & Country -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="field-student-age" data-i18n="label_age">Öğrencinin Yaşı</label>
+                <select id="field-student-age" required>
+                  <option value="" disabled selected data-i18n="opt_select_age">Yaş Seçiniz</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="adult" data-i18n="opt_adult">Yetişkin (18+)</option>
+                </select>
+                <span class="field-error-msg" data-i18n="form_err_req">Lütfen yaş seçiniz.</span>
+              </div>
+              <div class="form-group">
+                <label for="field-country" data-i18n="label_country">Bulunduğunuz Ülke / Şehir</label>
+                <input type="text" id="field-country" required minlength="2" placeholder="Örn: Almanya, Köln" data-i18n-placeholder="placeholder_country">
+                <span class="field-error-msg" data-i18n="form_err_req">Lütfen bu alanı doldurunuz.</span>
+              </div>
+            </div>
+
+            <!-- Desired Program -->
+            <div class="form-group">
+              <label for="field-course" data-i18n="label_course">Almak İstediğiniz Eğitim</label>
+              <select id="field-course" required>
+                <option value="c1" data-i18n="opt_c1">Elif-Bâ & Sıfırdan Kur'an Okuma</option>
+                <option value="c2" selected data-i18n="opt_c2">Tecvidli Kur'an-ı Kerim Tilaveti</option>
+                <option value="c3" data-i18n="opt_c3">Hafızlık ve Sure Ezberi</option>
+                <option value="c4" data-i18n="opt_c4">Çocuklar İçin Arapça (Temel Konuşma)</option>
+                <option value="c5" data-i18n="opt_c5">Klasik ve Kur'an Arapçası (Fusha)</option>
+                <option value="c6" data-i18n="opt_c6">Ahlak & İslami Değerler Eğitimi</option>
+              </select>
+            </div>
+
+            <!-- Platform Picker (Google Meet vs Zoom) -->
+            <div class="form-group">
+              <label data-i18n="label_platform">Tercih Edilen Sanal Sınıf Platformu</label>
+              <div class="platform-picker-grid">
+                <label class="platform-picker-item">
+                  <input type="radio" name="platform" value="meet" checked>
+                  <span class="platform-picker-box">
+                    <svg viewBox="0 0 24 24" fill="#00ac47"><circle cx="12" cy="12" r="10"/></svg>
+                    <span>Google Meet</span>
+                  </span>
+                </label>
+                <label class="platform-picker-item">
+                  <input type="radio" name="platform" value="zoom">
+                  <span class="platform-picker-box">
+                    <svg viewBox="0 0 24 24" fill="#2d8cff"><circle cx="12" cy="12" r="10"/></svg>
+                    <span>Zoom Education</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Time Slot Preference -->
+            <div class="form-group">
+              <label for="field-time-slot" data-i18n="label_time">Uygun Olduğunuz Zaman Dilimi</label>
+              <select id="field-time-slot" required>
+                <option value="evening" selected data-i18n="opt_time_evening">Hafta İçi - Akşam (17:00 sonrası)</option>
+                <option value="morning" data-i18n="opt_time_morning">Hafta İçi - Sabah / Öğle</option>
+                <option value="weekend" data-i18n="opt_time_weekend">Hafta Sonu - Cumartesi / Pazar</option>
+              </select>
+            </div>
+
+            <!-- Consent Checkbox -->
+            <label class="consent-wrap">
+              <input type="checkbox" id="field-consent" required checked>
+              <span data-i18n="label_consent">WhatsApp üzerinden benimle iletişime geçilmesini ve deneme dersi randevusunun oluşturulmasını onaylıyorum.</span>
+            </label>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.2 7.8c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.8 2c.1.3 0 .5-.2.7l-.6.7c-.2.2-.1.4 0 .6.7 1.3 1.7 2.3 3 3 .2.1.4.1.6-.1l.8-1c.2-.2.4-.3.7-.2l1.9.9c.3.2.4.3.4.6 0 .4-.2 1.3-.8 1.8-.5.5-1.2.8-2 .8-1.1 0-3-.6-4.8-2.2-2.1-1.9-3.5-4.7-3.6-5.9 0-.7.2-1.3.5-1.7.4-.4.7-.4 1.5-.4Z"/></svg>
+              <span data-i18n="btn_submit">WhatsApp ile Randevuyu Tamamla</span>
+            </button>
+
+            <div class="form-privacy-note">
+              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span data-i18n="privacy_note">Bilgileriniz üçüncü taraflarla paylaşılmaz. Kayıt doğrudan WhatsApp sohbetinize aktarılır.</span>
+            </div>
+
+            <div class="form-status-alert" id="form-status-alert" role="alert"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-col">
+          <a class="brand footer-brand" href="#top">
+            <div class="brand-icon">
+              <svg viewBox="0 0 48 48"><path d="M11 31.5V14.7c4.8-1.8 9.2-1.1 13 2.1 3.8-3.2 8.2-3.9 13-2.1v16.8c-4.8-1.7-9.2-1-13 2.2-3.8-3.2-8.2-3.9-13-2.2Z"/><path d="M24 17v16.4"/></svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-title" data-i18n="brand_name">MİDAD AKADEMİ</span>
+              <span class="brand-subtitle" data-i18n="brand_tagline">Canlı Kur'an, Arapça & Değerler Eğitimi</span>
+            </div>
+          </a>
+          <p class="footer-desc" data-i18n="footer_desc">
+            Google Meet ve Zoom üzerinden tüm dünyadaki çocuklara ve yetişkinlere ehil hocalarla Kur'an-ı Kerim, Arapça ve İslam ahlakı eğitimi sunuyoruz.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 data-i18n="footer_quick_links">Hızlı Bağlantılar</h4>
+          <ul class="footer-links">
+            <li><a href="#courses-section" data-i18n="nav_courses">Eğitimlerimiz</a></li>
+            <li><a href="#platforms-section" data-i18n="nav_platforms">Meet & Zoom</a></li>
+            <li><a href="#method-section" data-i18n="nav_method">Nasıl İşler?</a></li>
+            <li><a href="#faq-section" data-i18n="nav_faq">S.S.S.</a></li>
+            <li><a href="#trial-section" data-i18n="nav_trial">Ücretsiz Deneme Dersi</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Programs -->
+        <div class="footer-col">
+          <h4 data-i18n="footer_courses">Programlar</h4>
+          <ul class="footer-links">
+            <li><a href="#courses-section" data-i18n="c1_title">Elif-Bâ & Sıfırdan Kur'an</a></li>
+            <li><a href="#courses-section" data-i18n="c2_title">Tecvidli Kur'an Okuma</a></li>
+            <li><a href="#courses-section" data-i18n="c3_title">Hafızlık Programı</a></li>
+            <li><a href="#courses-section" data-i18n="c4_title">Çocuklar İçin Arapça</a></li>
+            <li><a href="#courses-section" data-i18n="c5_title">Klasik & Kur'an Arapçası</a></li>
+            <li><a href="#courses-section" data-i18n="c6_title">Ahlak & İslami Değerler</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Platform Badges -->
+        <div class="footer-col">
+          <h4 data-i18n="platforms_badge">Sanal Sınıflar</h4>
+          <div class="footer-platforms-box">
+            <div class="platform-pill">
+              <svg viewBox="0 0 24 24" fill="#00ac47"><circle cx="12" cy="12" r="10"/></svg>
+              <span>Google Meet Live</span>
+            </div>
+            <div class="platform-pill">
+              <svg viewBox="0 0 24 24" fill="#2d8cff"><circle cx="12" cy="12" r="10"/></svg>
+              <span>Zoom Education</span>
+            </div>
+            <div class="platform-pill">
+              <svg viewBox="0 0 24 24" fill="#25d366"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+              <span>WhatsApp Koordinasyon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="current-year">2026</span> <span data-i18n="footer_rights">Tüm hakları saklıdır. Midad Kur'an ve Arapça Akademisi.</span></p>
+        <p>Google Meet™ & Zoom™ are trademarks of their respective owners.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Quick CTA Bar -->
+  <a class="sticky-mobile-cta" href="#trial-section" aria-label="Ücretsiz Deneme Dersi">
+    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    <span data-i18n="sticky_cta_text">Ücretsiz Deneme Dersi</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Student Portal Modal -->
+  <div class="portal-modal-backdrop" id="student-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="student-modal-title">
+    <div class="portal-modal">
+      <div class="modal-header-bar">
+        <h3 id="student-modal-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span data-i18n="student_portal_title">Öğrenci Girişi & Paneli</span>
+        </h3>
+        <button type="button" class="modal-close-btn" id="close-student-modal" aria-label="Close Modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- View 1: Not Logged In (Login Form) -->
+        <div id="student-login-view" class="modal-login-wrap">
+          <p data-i18n="student_login_lead">Planlanan canlı derslerinizi, Google Meet/Zoom bağlantılarınızı ve gelişim notlarınızı takip edin.</p>
+          
+          <button type="button" class="btn-demo-quick" id="btn-student-demo-fill">
+            <span>⚡</span> <span data-i18n="student_demo_login">Öğrenci Demo Girişi (Yusuf Demir)</span>
+          </button>
+
+          <form id="student-login-form">
+            <div class="form-group">
+              <label for="student-login-email" data-i18n="student_email">E-Posta Adresi</label>
+              <input type="email" id="student-login-email" required value="ogrenci@midad.com">
+            </div>
+            <div class="form-group">
+              <label for="student-login-password" data-i18n="student_password">Şifre</label>
+              <input type="password" id="student-login-password" required value="123456">
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%; border-radius:var(--radius-sm); margin-top:10px;">
+              <span data-i18n="student_btn_login">Giriş Yap</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- View 2: Logged In (Student Dashboard) -->
+        <div id="student-dashboard-view" style="display:none;">
+          <div class="student-dash-header">
+            <div class="student-info-box">
+              <h4><span data-i18n="student_welcome">Hoş Geldiniz</span>, <span id="student-dash-name">Yusuf Demir</span>!</h4>
+              <p><span data-i18n="student_enrolled_course">Kayıtlı Program</span>: <strong id="student-dash-course">Tecvidli Kur'an-ı Kerim</strong></p>
+            </div>
+            <button type="button" class="btn-logout" id="btn-student-logout" data-i18n="nav_logout">Çıkış Yap</button>
+          </div>
+
+          <div class="student-section-title">
+            <span data-i18n="student_upcoming">Yaklaşan Canlı Derslerim</span>
+            <button type="button" class="btn-secondary" id="btn-student-book-more" style="padding:4px 12px; font-size:12px;" data-i18n="student_book_new">Yeni Ders Al</button>
+          </div>
+
+          <div class="upcoming-appointments-list" id="student-appointments-list">
+            <!-- Rendered by script.js -->
+          </div>
+
+          <div class="student-section-title" data-i18n="student_past">Geçmiş Ders Notları & Gelişim</div>
+          <div class="past-notes-box">
+            <div class="past-note-item">
+              <strong>📖 12 Mart 2026 — Tecvid & Mahreç</strong>
+              <p>Öğretmen Notu: "Nun-u Sakin kurallarından İhfa ve İzhar çalışıldı. Gayet başarılıydı. Sayfa 18-20 arası evde 2 kez tekrar edilecek."</p>
+            </div>
+            <div class="past-note-item">
+              <strong>🌟 8 Mart 2026 — Ahlaki Değer Sohbeti</strong>
+              <p>Öğretmen Notu: "Bu haftanın konusu olan 'Doğruluk' üzerine sohbet ettik. Yusuf'un aktif katılımı ve anlayışı takdire şayandı."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Portal Modal -->
+  <div class="portal-modal-backdrop" id="admin-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="admin-modal-title">
+    <div class="portal-modal admin-modal-size">
+      <div class="modal-header-bar">
+        <h3 id="admin-modal-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span data-i18n="admin_portal_title">Yönetici (Admin) Kontrol Paneli</span>
+        </h3>
+        <button type="button" class="modal-close-btn" id="close-admin-modal" aria-label="Close Modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- View 1: Admin Login -->
+        <div id="admin-login-view" class="modal-login-wrap">
+          <p data-i18n="admin_login_lead">Öğrenci randevularını, eğitmen takvimlerini ve sınıf bağlantılarını yönetin.</p>
+          
+          <button type="button" class="btn-demo-quick" id="btn-admin-demo-fill">
+            <span>🛡️</span> <span data-i18n="admin_demo_login">Admin Demo Girişi (admin@midad.com)</span>
+          </button>
+
+          <form id="admin-login-form">
+            <div class="form-group">
+              <label for="admin-login-email" data-i18n="student_email">E-Posta Adresi</label>
+              <input type="email" id="admin-login-email" required value="admin@midad.com">
+            </div>
+            <div class="form-group">
+              <label for="admin-login-password" data-i18n="student_password">Şifre</label>
+              <input type="password" id="admin-login-password" required value="admin123">
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%; border-radius:var(--radius-sm); margin-top:10px;">
+              <span data-i18n="admin_btn_login">Yönetici Girişi</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- View 2: Admin Dashboard -->
+        <div id="admin-dashboard-view" style="display:none;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <h4><span data-i18n="admin_portal_title">Yönetici Kontrol Paneli</span></h4>
+            <button type="button" class="btn-logout" id="btn-admin-logout" data-i18n="nav_logout">Çıkış Yap</button>
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="admin-stats-grid">
+            <div class="stat-box primary">
+              <div class="stat-num" id="admin-stat-total">0</div>
+              <div class="stat-label" data-i18n="admin_stat_total_bookings">Toplam Randevu</div>
+            </div>
+            <div class="stat-box success">
+              <div class="stat-num" id="admin-stat-confirmed">0</div>
+              <div class="stat-label" data-i18n="admin_stat_confirmed">Onaylı Dersler</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num">14</div>
+              <div class="stat-label" data-i18n="admin_stat_active_students">Aktif Öğrenci</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num">4</div>
+              <div class="stat-label" data-i18n="admin_stat_teachers">Aktif Eğitmenler</div>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <h4 data-i18n="admin_table_title">Tüm Ders Randevuları</h4>
+            <button type="button" class="btn-secondary" id="btn-admin-scroll-cal" style="padding:6px 14px; font-size:12px;" data-i18n="admin_btn_new_booking">+ Yeni Randevu</button>
+          </div>
+
+          <!-- Admin Appointments Table -->
+          <div class="admin-table-container">
+            <table class="admin-data-table">
+              <thead>
+                <tr>
+                  <th data-i18n="admin_col_student">Öğrenci</th>
+                  <th data-i18n="admin_col_course">Ders & Eğitmen</th>
+                  <th data-i18n="admin_col_datetime">Tarih & Saat</th>
+                  <th data-i18n="admin_col_platform">Platform & Link</th>
+                  <th data-i18n="admin_col_status">Durum</th>
+                  <th data-i18n="admin_col_actions">İşlemler</th>
+                </tr>
+              </thead>
+              <tbody id="admin-appointments-tbody">
+                <!-- Dynamically populated by script.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

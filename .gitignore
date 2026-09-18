@@ -1,0 +1,8 @@
+# Midad Academy - Live Quran & Arabic Education Platform
+# https://kanepymobilya-web.github.io/kuran-akademi/
+
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
