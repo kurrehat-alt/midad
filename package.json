@@ -1,0 +1,25 @@
+{
+  "name": "midad-academy",
+  "version": "1.0.0",
+  "description": "Midad Akademi — Arapça ve Kur'an Eğitim Platformu Backend & Frontend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "midad",
+    "quran",
+    "arabic",
+    "supabase",
+    "express"
+  ],
+  "author": "Midad Academy",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}

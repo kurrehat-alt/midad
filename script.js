@@ -458,6 +458,10 @@ function handleCalendarBookingSubmit(e) {
   const currentList = getStoredAppointments();
   currentList.unshift(newAppointment);
   saveAppointments(currentList);
+  // Async sync to Supabase / Backend
+  if (window.MidadBackend && typeof window.MidadBackend.createAppointment === "function") {
+    window.MidadBackend.createAppointment(newAppointment).catch(err => console.warn("[Midad] Supabase sync error:", err));
+  }
 
   if (statusBox) {
     statusBox.textContent = `✓ ${dict.cal_success_msg || "Randevunuz oluşturuldu!"} (${platform})`;
@@ -569,6 +573,10 @@ function cancelAppointment(id) {
     return a;
   });
   saveAppointments(appointments);
+  // Async sync cancellation to Supabase / Backend
+  if (window.MidadBackend && typeof window.MidadBackend.updateAppointmentStatus === "function") {
+    window.MidadBackend.updateAppointmentStatus(id, "cancelled").catch(err => console.warn("[Midad] Supabase cancel error:", err));
+  }
 
   renderStudentDashboard();
   renderCalendar();
@@ -670,6 +678,9 @@ function adminUpdateStatus(id, newStatus) {
   let appointments = getStoredAppointments();
   appointments = appointments.map(a => a.id === id ? { ...a, status: newStatus } : a);
   saveAppointments(appointments);
+  if (window.MidadBackend && typeof window.MidadBackend.updateAppointmentStatus === "function") {
+    window.MidadBackend.updateAppointmentStatus(id, newStatus).catch(err => console.warn("[Midad] Supabase status error:", err));
+  }
   renderAdminDashboard();
   renderCalendar();
 }
@@ -684,6 +695,9 @@ function adminEditMeetingLink(id) {
   if (newUrl && newUrl.trim()) {
     appointments = appointments.map(a => a.id === id ? { ...a, meetingUrl: newUrl.trim() } : a);
     saveAppointments(appointments);
+    if (window.MidadBackend && typeof window.MidadBackend.updateAppointmentMeetingLink === "function") {
+      window.MidadBackend.updateAppointmentMeetingLink(id, newUrl.trim()).catch(err => console.warn("[Midad] Supabase link error:", err));
+    }
     renderAdminDashboard();
   }
 }
@@ -808,6 +822,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setLanguage(initialLang);
   updateNavUserUI();
+  // Backend / Supabase initial sync
+  if (window.MidadBackend && typeof window.MidadBackend.getAppointments === "function") {
+    window.MidadBackend.getAppointments().then(data => {
+      if (data && data.length > 0) {
+        renderCalendar();
+        const u = getCurrentUser();
+        if (u && u.role === "admin") renderAdminDashboard();
+        if (u && u.role === "student") renderStudentDashboard();
+      }
+    }).catch(err => console.warn("[Midad] Initial fetch fallback:", err));
+  }
+
+  // Realtime subscription listener
+  window.addEventListener("midad:appointments-changed", () => {
+    renderCalendar();
+    const u = getCurrentUser();
+    if (u && u.role === "admin") renderAdminDashboard();
+    if (u && u.role === "student") renderStudentDashboard();
+  });
 
   // 2. Language Dropdown Toggle
   const langBtn = document.getElementById("lang-btn");
@@ -1121,6 +1154,21 @@ document.addEventListener("DOMContentLoaded", () => {
         platform,
         timeSlot
       }, currentLang);
+      // Async sync trial application to Supabase
+      if (window.MidadBackend && typeof window.MidadBackend.submitTrialApplication === "function") {
+        window.MidadBackend.submitTrialApplication({
+          parent_name: parentName,
+          student_name: studentName,
+          student_age: studentAge,
+          country: country,
+          course: course,
+          platform: platform,
+          time_slot: timeSlot,
+          phone: document.getElementById("field-phone")?.value.trim() || "",
+          email: document.getElementById("field-email")?.value.trim() || "",
+          notes: document.getElementById("field-notes")?.value.trim() || ""
+        }).catch(err => console.warn("[Midad] Trial submit error:", err));
+      }
 
       if (statusAlert) {
         statusAlert.textContent = "✓ WhatsApp açılıyor... / Opening WhatsApp...";
