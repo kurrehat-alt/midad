@@ -68,16 +68,14 @@ CREATE INDEX IF NOT EXISTS idx_profiles_role ON public.profiles (role);
 -- ROW LEVEL SECURITY (RLS) POLİTİKALARI
 -- ============================================================================
 -- RLS'i aktif hale getiriyoruz
-ALTER TABLE public.appointments ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.trial_applications ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
-
 -- Mevcut politikaları temizleyelim (varsa tekrar oluştururken hata vermemesi için)
 DROP POLICY IF EXISTS "Public full access to appointments" ON public.appointments;
 DROP POLICY IF EXISTS "Public insert to trial applications" ON public.trial_applications;
 DROP POLICY IF EXISTS "Public read trial applications" ON public.trial_applications;
+DROP POLICY IF EXISTS "Public update trial applications" ON public.trial_applications;
 DROP POLICY IF EXISTS "Public read profiles" ON public.profiles;
 DROP POLICY IF EXISTS "Public update profiles" ON public.profiles;
+DROP POLICY IF EXISTS "Public insert or update profiles" ON public.profiles;
 
 -- Appointments Politikası:
 -- Anonim ve giriş yapmış herkes randevuları okuyabilir, randevu oluşturabilir ve güncelleyebilir (Demo/Web arayüzü uyumluluğu için)
@@ -106,6 +104,13 @@ USING (true)
 WITH CHECK (true);
 
 -- Profiles Politikası:
+-- Realtime yayını aktif etme
+DO $$
+BEGIN
+  ALTER PUBLICATION supabase_realtime ADD TABLE public.appointments;
+EXCEPTION
+  WHEN OTHERS THEN NULL;
+END $$;
 CREATE POLICY "Public read profiles"
 ON public.profiles
 FOR SELECT
