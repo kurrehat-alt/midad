@@ -33,17 +33,18 @@
 
 ```
 C:/projeler/kuran/
-├── index.html        # Ana sayfa, semantik HTML5, takvim ve modallar
-├── styles.css        # Zümrüt & altın tema, RTL/LTR desteği, responsive grid
-├── translations.js   # 7 dilde 211 anahtarlı çeviri sözlüğü
-├── script.js         # Takvim, yerel veri deposu, kimlik doğrulama, WhatsApp motoru
-├── .gitignore        # Git istisnaları
-└── README.md         # Dokümantasyon
+├── .github/workflows/deploy.yml # Otomatik GitHub Pages dağıtım iş akışı
+├── index.html                  # Ana sayfa, semantik HTML5, takvim ve modallar
+├── styles.css                  # Zümrüt & altın tema, RTL/LTR desteği, responsive grid
+├── translations.js             # 7 dilde 211 anahtarlı çeviri sözlüğü
+├── script.js                   # Takvim, yerel veri deposu, kimlik doğrulama, WhatsApp motoru
+├── .gitignore                  # Git istisnaları
+└── README.md                   # Dokümantasyon
 ```
 
 ---
 
 ## 🚀 Canlı Dağıtım (Live Deployment)
 
-- **GitHub Repository:** https://github.com/kanepymobilya-web/kuran-akademi
-- **GitHub Pages:** https://kanepymobilya-web.github.io/kuran-akademi/
+- **GitHub Repository:** https://github.com/kurrehat-alt/midad
+- **GitHub Pages:** https://kurrehat-alt.github.io/midad/
