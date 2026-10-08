@@ -375,11 +375,13 @@ app.get("*", (req, res) => {
 // ============================================================================
 // START SERVER
 // ============================================================================
-app.listen(PORT, "0.0.0.0", () => {
+const listener = app.listen(PORT, () => {
+  const addr = listener.address();
+  const bind = typeof addr === "string" ? addr : `port ${addr.port}`;
   console.log("==========================================================");
-  console.log(`[Midad Backend] Sunucu port ${PORT} üzerinde çalışıyor:`);
-  console.log(`👉 http://localhost:${PORT}`);
-  console.log(`👉 API Health: http://localhost:${PORT}/api/health`);
+  console.log(`[Midad Backend] Sunucu ${bind} üzerinde çalışıyor:`);
+  console.log(`👉 http://localhost:${typeof addr === "object" ? addr.port : PORT}`);
+  console.log(`👉 API Health: /api/health`);
   console.log(`👉 Supabase URL: ${SUPABASE_URL}`);
   console.log("==========================================================");
 });
