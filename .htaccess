@@ -1,0 +1,36 @@
+# ==============================================================================
+# Midad Akademi — Hostinger LiteSpeed / Apache Yapılandırması
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. HTTPS Yönlendirmesi
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 2. Mevcut dosya veya dizin varsa doğrudan sun
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 3. SPA Fallback (Tüm diğer istekleri index.html'e yönlendir)
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# ==============================================================================
+# Gzip / Brotli Sıkıştırma (Performans)
+# ==============================================================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>
+
+# ==============================================================================
+# Güvenlik ve Önbellek Başlıkları
+# ==============================================================================
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+</IfModule>
